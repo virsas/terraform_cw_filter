@@ -1,10 +1,10 @@
-# tfmod_cw_filter
+# terraform_cw_filter
 
 Terraform module to create cloudwatch filter.
 
 ## Dependencies
 
-CW group <https://github.com/virsas/tfmod_cw_group>
+CW group <https://github.com/virsas/terraform_cw_group>
 
 ## Terraform example
 
@@ -24,7 +24,7 @@ variable "unauthorized_api_calls_metric" {
 }
 
 module "cw_filter_aws_config_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   # alarm varables. It is the same variable as the one we use for the alarm later, see the complete configuration below.
   alarm  = var.unauthorized_api_calls_metric
   # the group you log all the cloudtrail logs
@@ -222,168 +222,168 @@ variable "aws_config_changes_metric" {
 
 ##
 module "cw_filter_unauthorized_api_calls_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.unauthorized_api_calls_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_unauthorized_api_calls_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.unauthorized_api_calls_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_unauthorized_api_calls_metric.id
 }
 ##
 module "cw_filter_security_group_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.security_group_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_security_group_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.security_group_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_security_group_changes_metric.id
 }
 ##
 module "cw_filter_network_acl_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.network_acl_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_network_acl_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.network_acl_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_network_acl_changes_metric.id
 }
 ##
 module "cw_filter_gateway_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.gateway_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_gateway_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.gateway_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_gateway_changes_metric.id
 }
 ##
 module "cw_filter_route_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.route_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_route_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.route_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_route_changes_metric.id
 }
 ##
 module "cw_filter_vpc_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.vpc_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_vpc_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.vpc_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_vpc_changes_metric.id
 }
 ##
 module "cw_filter_no_mfa_console_signin_alarm" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.no_mfa_console_signin_alarm
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_no_mfa_console_signin_alarm" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.no_mfa_console_signin_alarm
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_no_mfa_console_signin_alarm.id
 }
 ##
 module "cw_filter_root_usage_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.root_usage_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_root_usage_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.root_usage_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_root_usage_metric.id
 }
 ##
 module "cw_filter_iam_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.iam_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_iam_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.iam_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_iam_changes_metric.id
 }
 ##
 module "cw_filter_cloudtrail_cfg_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.cloudtrail_cfg_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_cloudtrail_cfg_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.cloudtrail_cfg_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_cloudtrail_cfg_changes_metric.id
 }
 ##
 module "cw_filter_console_signin_failure_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.console_signin_failure_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_console_signin_failure_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.console_signin_failure_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_console_signin_failure_metric.id
 }
 ##
 module "cw_filter_disable_or_delete_cmk_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.disable_or_delete_cmk_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_disable_or_delete_cmk_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.disable_or_delete_cmk_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_disable_or_delete_cmk_changes_metric.id
 }
 ##
 module "cw_filter_s3_bucket_policy_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.s3_bucket_policy_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_s3_bucket_policy_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.s3_bucket_policy_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_s3_bucket_policy_changes_metric.id
 }
 ##
 module "cw_filter_aws_config_changes_metric" {
-  source = "github.com/virsas/tfmod_cw_filter"
+  source = "github.com/virsas/terraform_cw_filter"
   alarm  = var.aws_config_changes_metric
   group  = module.cw_cloudtrail.name
 }
 module "cw_alarm_aws_config_changes_metric" {
-  source  = "github.com/virsas/tfmod_cw_alarm"
+  source  = "github.com/virsas/terraform_cw_alarm"
   alarm   = var.aws_config_changes_metric
   sns     = [module.sns_topic_alarms.arn]
   filter  = module.cw_filter_aws_config_changes_metric.id
