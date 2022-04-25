@@ -4,7 +4,7 @@ Terraform module to create cloudwatch filter.
 
 ## Dependencies
 
-CW group <https://github.com/virsas/terraform_cw_group>
+- CW group <https://github.com/virsas/terraform_cw_group>
 
 ## Terraform example
 
