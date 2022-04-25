@@ -1,3 +1,7 @@
+provider "aws" {
+  region = var.region
+}
+
 resource "aws_cloudwatch_log_metric_filter" "root" {
   name           = var.alarm.name
   pattern        = var.alarm.patern

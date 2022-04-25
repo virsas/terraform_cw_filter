@@ -1,2 +1,3 @@
+variable "region" { default = "eu-west-1" }
 variable "alarm" { default = {} }
 variable "group" {}
