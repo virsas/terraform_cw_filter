@@ -24,7 +24,7 @@ variable "unauthorized_api_calls_metric" {
 }
 
 module "cw_filter_aws_config_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   # alarm varables. It is the same variable as the one we use for the alarm later, see the complete configuration below.
   alarm  = var.unauthorized_api_calls_metric
   # the group you log all the cloudtrail logs
@@ -222,7 +222,7 @@ variable "aws_config_changes_metric" {
 
 ##
 module "cw_filter_unauthorized_api_calls_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.unauthorized_api_calls_metric
   group  = module.cw_cloudtrail.name
 }
@@ -234,7 +234,7 @@ module "cw_alarm_unauthorized_api_calls_metric" {
 }
 ##
 module "cw_filter_security_group_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.security_group_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -246,7 +246,7 @@ module "cw_alarm_security_group_changes_metric" {
 }
 ##
 module "cw_filter_network_acl_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.network_acl_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -258,7 +258,7 @@ module "cw_alarm_network_acl_changes_metric" {
 }
 ##
 module "cw_filter_gateway_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.gateway_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -270,7 +270,7 @@ module "cw_alarm_gateway_changes_metric" {
 }
 ##
 module "cw_filter_route_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.route_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -282,7 +282,7 @@ module "cw_alarm_route_changes_metric" {
 }
 ##
 module "cw_filter_vpc_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.vpc_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -294,7 +294,7 @@ module "cw_alarm_vpc_changes_metric" {
 }
 ##
 module "cw_filter_no_mfa_console_signin_alarm" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.no_mfa_console_signin_alarm
   group  = module.cw_cloudtrail.name
 }
@@ -306,7 +306,7 @@ module "cw_alarm_no_mfa_console_signin_alarm" {
 }
 ##
 module "cw_filter_root_usage_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.root_usage_metric
   group  = module.cw_cloudtrail.name
 }
@@ -318,7 +318,7 @@ module "cw_alarm_root_usage_metric" {
 }
 ##
 module "cw_filter_iam_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.iam_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -330,7 +330,7 @@ module "cw_alarm_iam_changes_metric" {
 }
 ##
 module "cw_filter_cloudtrail_cfg_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.cloudtrail_cfg_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -342,7 +342,7 @@ module "cw_alarm_cloudtrail_cfg_changes_metric" {
 }
 ##
 module "cw_filter_console_signin_failure_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.console_signin_failure_metric
   group  = module.cw_cloudtrail.name
 }
@@ -354,7 +354,7 @@ module "cw_alarm_console_signin_failure_metric" {
 }
 ##
 module "cw_filter_disable_or_delete_cmk_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.disable_or_delete_cmk_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -366,7 +366,7 @@ module "cw_alarm_disable_or_delete_cmk_changes_metric" {
 }
 ##
 module "cw_filter_s3_bucket_policy_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.s3_bucket_policy_changes_metric
   group  = module.cw_cloudtrail.name
 }
@@ -378,7 +378,7 @@ module "cw_alarm_s3_bucket_policy_changes_metric" {
 }
 ##
 module "cw_filter_aws_config_changes_metric" {
-  source = "github.com/virsas/terraform_cw_filter"
+  source = "git::https://github.com/virsas/terraform_cw_filter.git?ref=v1.0.0"
   alarm  = var.aws_config_changes_metric
   group  = module.cw_cloudtrail.name
 }
